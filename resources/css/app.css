@@ -1,0 +1,130 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+    --color-ink: #10233f;
+    --color-ink-soft: #3d4f68;
+    --color-paper: #f4f1ea;
+    --color-card: #fffcf7;
+    --color-line: #e4dccb;
+    --color-accent: #0f766e;
+    --color-accent-dark: #115e59;
+    --color-gold: #b45309;
+}
+
+body {
+    background: var(--color-paper);
+    color: var(--color-ink);
+}
+
+.sidebar-link {
+    @apply flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-slate-300 transition hover:bg-white/10 hover:text-white;
+}
+
+.sidebar-link.active {
+    @apply bg-teal-700 text-white shadow-sm;
+}
+
+.page-title {
+    @apply text-2xl font-semibold tracking-tight text-slate-900;
+}
+
+.page-subtitle {
+    @apply mt-1 text-sm text-slate-500;
+}
+
+.card {
+    @apply rounded-2xl border border-stone-200 bg-white shadow-[0_12px_30px_-24px_rgba(16,35,63,0.45)];
+}
+
+.btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold transition;
+}
+
+.btn-primary {
+    @apply bg-teal-700 text-white hover:bg-teal-800;
+}
+
+.btn-secondary {
+    @apply border border-stone-300 bg-white text-slate-700 hover:bg-stone-50;
+}
+
+.btn-danger {
+    @apply bg-rose-700 text-white hover:bg-rose-800;
+}
+
+.field {
+    @apply mt-1 w-full rounded-lg border border-stone-300 bg-white px-3 py-2 text-sm text-slate-900 shadow-sm outline-none ring-teal-700/20 focus:border-teal-700 focus:ring;
+}
+
+.field-label {
+    @apply text-sm font-medium text-slate-700;
+}
+
+.table-wrap {
+    @apply overflow-x-auto;
+}
+
+table.data {
+    @apply min-w-full text-left text-sm;
+}
+
+table.data th {
+    @apply border-b border-stone-200 bg-stone-50 px-4 py-3 font-semibold text-slate-600;
+}
+
+table.data td {
+    @apply border-b border-stone-100 px-4 py-3 text-slate-700;
+}
+
+.badge {
+    @apply inline-flex rounded-full px-2.5 py-1 text-xs font-semibold;
+}
+
+.badge-pending {
+    @apply bg-amber-50 text-amber-800;
+}
+
+.badge-paid {
+    @apply bg-emerald-50 text-emerald-800;
+}
+
+.badge-overdue {
+    @apply bg-rose-50 text-rose-800;
+}
+
+.badge-cancelled {
+    @apply bg-slate-100 text-slate-600;
+}
+
+.stat-value {
+    @apply mt-3 text-2xl font-semibold tracking-tight text-slate-900;
+}
+
+.progress {
+    @apply h-2 overflow-hidden rounded-full bg-stone-200;
+}
+
+.progress > span {
+    @apply block h-full rounded-full bg-teal-700;
+}
+
+.progress.over > span {
+    @apply bg-rose-600;
+}
+
+@media print {
+    .no-print {
+        display: none !important;
+    }
+
+    body {
+        background: white;
+    }
+}
